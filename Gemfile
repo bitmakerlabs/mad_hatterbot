@@ -28,9 +28,6 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
 # Deploy with Capistrano
 # gem 'capistrano'
 
@@ -38,6 +35,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "unicorn", ">= 4.3.1"
+gem 'hooves', require: 'hooves/default'
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
@@ -52,3 +50,7 @@ gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.0.4"
+gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "figaro", ">= 0.5.3"
+gem "better_errors", ">= 0.6.0", :group => :development
+gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
