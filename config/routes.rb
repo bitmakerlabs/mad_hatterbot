@@ -1,4 +1,6 @@
 MadHatterbot::Application.routes.draw do
+  get "seating/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
