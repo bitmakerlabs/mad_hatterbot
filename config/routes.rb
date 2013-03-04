@@ -1,5 +1,12 @@
 MadHatterbot::Application.routes.draw do
-  get "seating/index"
+  get "/" => "home#index"
+
+  resource :seats do
+    collection do
+      get 'index'
+      get 'change_places'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
