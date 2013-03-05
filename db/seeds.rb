@@ -13,15 +13,11 @@ seats = Seat.create([
   { name: 'D' }
 ])
 
-Student.create([
-  {
-    first_name: 'John',
-    last_name: 'Doe',
-    seat: seats[0]
-  },
-  {
-    first_name: 'Jane',
-    last_name: 'Doe',
-    seat: seats[0]
-  }
-])
+students = YAML.load(File.open (Rails.root "db", "assets"))["students"]
+students.each do |s|
+  names = s.split(' ');
+  Student.create!(
+    first_name: names[0],
+    last_name: names[1]
+  )
+end
