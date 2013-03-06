@@ -1,5 +1,5 @@
 MadHatterbot::Application.routes.draw do
-  get "/" => "home#index"
+  get "/" => "seats#index"
 
   resource :seats do
     collection do

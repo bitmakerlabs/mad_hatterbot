@@ -1,19 +1,16 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-seats = Seat.create([
-  { name: 'A' },
-  { name: 'B' },
-  { name: 'C' },
-  { name: 'D' }
-])
+# Adding the seats
+(0..3).each do |row|
+  column_count = row==0 ? 8 : 6
+  (0..column_count).each do |column|
+    seats = Seat.create row: row, column: column
+  end
+end
 
-students = YAML.load(File.open (Rails.root "db", "assets"))["students"]
+# Adding the students
+students = YAML.load(File.open (Rails.root.join "db", "assets", "students.yml"))["students"]
 students.each do |s|
   names = s.split(' ');
   Student.create!(

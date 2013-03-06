@@ -1,5 +1,5 @@
 class Seat < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :row, :column
   has_one :student
 
   def self.change_places!
