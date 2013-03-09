@@ -16,7 +16,9 @@
               .desk.sprite
               - desk.each do |s|
                 .seat.sprite{:column => s.column, :row => s.row}
-      %td= s.student.name if s.student.present?
+              .names
+                - desk.each do |s|
+                  .name= s.student.name if s.student.present?
 
     %footer.span12
       = link_to "Change Places!", change_places_seats_path, :class => 'btn btn-primary btn-large'
