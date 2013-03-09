@@ -4,8 +4,8 @@
 # Adding the seats
 (0..3).each do |row|
   column_count = row==0 ? 8 : 6
-  (0..column_count).each do |column|
-    seats = Seat.create row: row, column: column
+  (0..column_count-1).each do |column|
+    Seat.create row: row, column: column
   end
 end
 

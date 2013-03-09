@@ -1,21 +1,22 @@
 .container
-	.row
-		.header.span12
-			%h1 The Mad HatterBot
+  - if false
+    .row
+      .header.span12
+        %h1 The Mad HatterBot
 
-		.span12
-			%table
-				%thead
-					%tr
-						%th
-							Seat
-						%th
-							Student
-					-@seats.each do |s|
-						%tr
-							%td= s.name
-							%td= s.student.name if s.student.present?
+  .row
+    .classroom.span12
+      .wall
+      .blackboard.sprite
+      .professor.sprite
+      - @seats.group_by(&:row).each do |i, row|
+        .classroom-row
+          - row.each_slice(2) do |desk|
+            .seat-pair
+              .desk.sprite
+              - desk.each do |s|
+                .seat.sprite{:column => s.column, :row => s.row}
+      %td= s.student.name if s.student.present?
 
-		.span12
-			= link_to "Change Places!", change_places_seats_path, :class => 'btn btn-primary btn-large'
-		
+    %footer.span12
+      = link_to "Change Places!", change_places_seats_path, :class => 'btn btn-primary btn-large'

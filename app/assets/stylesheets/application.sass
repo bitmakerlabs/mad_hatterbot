@@ -14,14 +14,87 @@
 
 @import "bootstrap"
 
-.header
-	background: url("/mad_hatterbot.jpg") #EEE no-repeat
-	height: 210px
-	margin-bottom: 20px
+body
+  background: black
+  margin-top: 30px
 
-	h1
-		padding-left: 240px
-		margin-top: 105px - 20px
+.header
+  background: url("/img/mad_hatterbot.jpg") #EEE no-repeat
+  height: 210px
+  margin-bottom: 20px
+
+  h1
+    padding-left: 240px
+    margin-top: 105px - 20px
+
+footer
+  margin-top: -80px
+  height: 80px
+  background: rgba(0,0,0,0.8)
+  .btn
+    margin-left: 20px
+
+.classroom
+  $scale: 2
+
+  background: url("/img/floor.png") repeat
+  background-size: 51px * $scale auto
+  background-position: -1px -3px
+
+  padding-bottom: 70px
+
+  .sprite
+    background: url("/img/pokemon_sprites.png") no-repeat
+    background-size: 1940px * $scale auto
+
+  .wall
+    height: 70px
+    width: 100%
+    margin-bottom: -70px
+    background: #CCA
+    background: url("/img/wall.png")
+
+  .blackboard
+    background-position: -492px * $scale -654px * $scale
+    width: 129px / 2 * $scale
+    height: 36px / 2 * $scale
+    margin: 0 auto
+    margin-top: 15px
+    margin-bottom: 20px
+
+  .professor
+    background-position: -276px * $scale -424px * $scale
+    width: 44px / 3 * $scale
+    height: 62px / 3 * $scale
+    margin: 0 auto
+    margin-top: 20px
+    margin-bottom: 20px
+
+
+  .classroom-row
+    display : -webkit-flex
+    -webkit-flex-direction: row
+    -webkit-justify-content: space-between
+    padding: 0 100px
+    margin-bottom: 20px
+
+  .seat
+    background-position: -749px * $scale -729px * $scale
+    width: 47px / 3 * $scale
+    height: 53px / 3 * $scale
+    margin-right: 1px
+    display: inline-block
+
+    &:last-child
+      margin-right: 0
+
+  .desk
+    background-position: -827px * $scale -766px * $scale
+    width: 97px / 3 * $scale
+    height: 24px * $scale
+
+  .seat-pair
+    text-align: center
 
 .btn
-	margin-top: 20px
+  margin-top: 20px
